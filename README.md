@@ -1,76 +1,113 @@
-Zobia Razzaq — Portfolio (Full Stack)
-Modern full-stack developer portfolio — React + TypeScript + Tailwind CSS on the frontend, Node.js + Express contact-form API on the backend.
+# 💼 Zobia Razzaq — Portfolio
 
-Project Structure
-text
+> Modern full-stack developer portfolio built with React, TypeScript, Tailwind CSS, and Node.js
+
+---
+
+## ✨ Features
+
+- 🎨 **Clean & Modern UI** — Responsive design with smooth animations
+- 📜 **Certificates Showcase** — Click to view certificates in a lightbox
+- 🚀 **Projects Grid** — Display your projects with descriptions and links
+- 📧 **Working Contact Form** — Messages sent via backend API with optional email notifications
+- 📊 **Skills & Experience** — Visual skill bars and timeline-based experience section
+- 🌊 **Smooth Scroll Animations** — Powered by Framer Motion
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+
+### Backend
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![Nodemailer](https://img.shields.io/badge/Nodemailer-339933?style=for-the-badge&logo=nodemailer&logoColor=white)
+
+---
+
+## 📁 Project Structure
 zobia-portfolio/
-├── frontend/     React + Vite + TypeScript + Tailwind CSS
-└── backend/      Node.js + Express (contact form API)
-Quick Start
-1. Run Backend (first)
+├── frontend/
+│ ├── src/
+│ │ ├── components/ # Reusable UI components
+│ │ ├── data/ # All content (projects, skills, experience)
+│ │ ├── pages/ # Page components
+│ │ └── styles/ # Global styles
+│ └── public/ # Static assets
+│
+└── backend/
+├── src/
+│ └── server.js # Express server with contact API
+├── data/ # messages.json (saved form data)
+└── .env # Environment variables
+
+text
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/zobia-portfolio.git
+cd zobia-portfolio
+2. Setup Backend
 bash
 cd backend
 npm install
 cp .env.example .env
 npm run dev
-Backend will run on http://localhost:4000.
+Server runs on http://localhost:4000
 
-SMTP Setup (optional): Leave SMTP details blank and messages will be saved to backend/data/messages.json. To receive emails:
-
-Go to Google Account → Security → App Passwords (2-Step Verification must be ON)
-
-Add SMTP_USER, SMTP_PASS, and CONTACT_TO to .env
-
-Restart the server
-
-2. Run Frontend (in a separate terminal)
+3. Setup Frontend
 bash
 cd frontend
 npm install
 cp .env.example .env
 npm run dev
-Open http://localhost:5173 in your browser.
+App runs on http://localhost:5173
 
-Features
-Clean, modern UI — Responsive portfolio with smooth animations
+📧 Email Configuration (Optional)
+To receive contact form emails:
 
-Certificates section — Click any certificate to view it in a lightbox
+Enable 2-Step Verification in your Google Account
 
-Projects grid — Showcase your real projects with descriptions
+Generate an App Password (Google Account → Security → App Passwords)
 
-Working contact form — Sends messages to backend API; emails you if SMTP is configured
+Add to .env:
 
-Skills & Experience — Visual skill bars and timeline-based experience section
+env
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-16-char-app-password
+CONTACT_TO=your-email@gmail.com
+Note: If left blank, messages are saved to backend/data/messages.json
 
-Scroll animations and smooth transitions
-
-Editing Content
-All content is centralized in these files:
+📝 Editing Content
+All content is centralized — no need to search through code:
 
 File	Purpose
 frontend/src/data/projects.ts	Projects list
-frontend/src/data/certificates.ts	Certificates (add images to frontend/public/certificates/)
+frontend/src/data/certificates.ts	Certificates (add images to public/certificates/)
 frontend/src/data/skills.ts	Skill bars
 frontend/src/data/experience.ts	Experience timeline
-Building for Production
+🚢 Deployment
+Frontend (Vercel/Netlify)
 bash
-# Build frontend
 cd frontend
-npm run build     # Creates dist/ folder — deploy to Vercel/Netlify
+npm run build
+Deploy the dist/ folder to any static host.
 
-# Start backend
-cd ../backend
-npm start          # Deploy to Render/Railway
+Backend (Render/Railway)
+Push to GitHub and connect your repository on Render/Railway. Set environment variables in the dashboard.
+
 Important: Set VITE_API_URL in frontend .env to your deployed backend URL.
-
-Tech Stack
-Layer	Technologies
-Frontend	React 19, TypeScript, Vite, Tailwind CSS, Framer Motion
-Backend	Node.js, Express, Nodemailer (optional)
-Deployment Checklist
-□ Push code to GitHub
-□ Deploy backend to Render/Railway
-□ Deploy frontend to Vercel/Netlify
-□ Set VITE_API_URL on frontend host to backend URL
-□ Set SMTP environment variables on backend host (if needed)
-□ Test contact form
