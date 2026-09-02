@@ -1,92 +1,76 @@
-# Zobia Razzaq — Portfolio (Full Stack)
+Zobia Razzaq — Portfolio (Full Stack)
+Modern full-stack developer portfolio — React + TypeScript + Tailwind CSS on the frontend, Node.js + Express contact-form API on the backend.
 
-Modern full-stack developer portfolio — React + TypeScript + Tailwind + Three.js
-(interactive 3D draggable name) on the frontend, Node/Express contact-form API
-on the backend.
-
-## Project Structure
-
-```
+Project Structure
+text
 zobia-portfolio/
-├── frontend/     React + Vite + TypeScript + Tailwind + react-three-fiber
+├── frontend/     React + Vite + TypeScript + Tailwind CSS
 └── backend/      Node.js + Express (contact form API)
-```
-
-## Quick Start
-
-### 1. Backend chalayein (pehle)
-
-```bash
+Quick Start
+1. Run Backend (first)
+bash
 cd backend
 npm install
 cp .env.example .env
 npm run dev
-```
+Backend will run on http://localhost:4000.
 
-Backend `http://localhost:4000` par chalega. `.env` mein SMTP details khali
-chhod dein to bhi chalega — messages `backend/data/messages.json` mein save
-ho jayenge. Agar aap chahte hain ke contact form se aapke Gmail par email bhi
-jaye, to:
+SMTP Setup (optional): Leave SMTP details blank and messages will be saved to backend/data/messages.json. To receive emails:
 
-1. Google Account → Security → **App Passwords** se ek app password banayein
-   (2-Step Verification on honi chahiye)
-2. `.env` mein `SMTP_USER` (your gmail) aur `SMTP_PASS` (app password) daal
-   dein
-3. Server restart karein
+Go to Google Account → Security → App Passwords (2-Step Verification must be ON)
 
-### 2. Frontend chalayein (doosri terminal mein)
+Add SMTP_USER, SMTP_PASS, and CONTACT_TO to .env
 
-```bash
+Restart the server
+
+2. Run Frontend (in a separate terminal)
+bash
 cd frontend
 npm install
 cp .env.example .env
 npm run dev
-```
+Open http://localhost:5173 in your browser.
 
-Browser mein `http://localhost:5173` khol lein.
+Features
+Clean, modern UI — Responsive portfolio with smooth animations
 
-## Features
+Certificates section — Click any certificate to view it in a lightbox
 
-- **Interactive 3D name** — hero section mein aapka naam real 3D text
-  (Three.js) hai jise mouse se **drag karke ghuma** sakte hain; chhodne par
-  khud-ba-khud slowly spin karta rehta hai
-- **Certificates section** — sab aapke asal certificates (ICPC, Amnesty,
-  Build with AI Hackathon, Vibe-a-thon, Tech Fusion 4.0 sessions) click karne
-  par bade lightbox mein khulte hain
-- **Projects grid** — aapke sab real projects (NimbusFM Cloud File Manager,
-  ImagiCraft AI, Ledger invoice tracker, University Management System, etc.)
-- **Working contact form** — backend API ko POST karta hai, aur agar SMTP
-  configure ho to email bhi bhejta hai
-- Scroll animations, skill bars, accordion-style experience timeline — sab
-  original single-file version se carry kiya gaya hai, ab proper React
-  components mein
+Projects grid — Showcase your real projects with descriptions
 
-## Editing Content
+Working contact form — Sends messages to backend API; emails you if SMTP is configured
 
-Sab text/data yahan milega, code dhoondne ki zaroorat nahi:
+Skills & Experience — Visual skill bars and timeline-based experience section
 
-- `frontend/src/data/projects.ts` — projects list
-- `frontend/src/data/certificates.ts` — certificates (naya certificate add
-  karne ke liye image `frontend/public/certificates/` mein daalein aur yahan
-  ek entry add kar dein)
-- `frontend/src/data/skills.ts` — skill bars
-- `frontend/src/data/experience.ts` — experience timeline
+Scroll animations and smooth transitions
 
-## Building for Production
+Editing Content
+All content is centralized in these files:
 
-```bash
+File	Purpose
+frontend/src/data/projects.ts	Projects list
+frontend/src/data/certificates.ts	Certificates (add images to frontend/public/certificates/)
+frontend/src/data/skills.ts	Skill bars
+frontend/src/data/experience.ts	Experience timeline
+Building for Production
+bash
+# Build frontend
 cd frontend
-npm run build     # dist/ folder banega — kisi bhi static host (Vercel/Netlify) par deploy karein
+npm run build     # Creates dist/ folder — deploy to Vercel/Netlify
 
+# Start backend
 cd ../backend
-npm start          # ya Render/Railway jaisi Node hosting par deploy karein
-```
+npm start          # Deploy to Render/Railway
+Important: Set VITE_API_URL in frontend .env to your deployed backend URL.
 
-Deploy karte waqt frontend ke `.env` mein `VITE_API_URL` ko apne deployed
-backend URL par set karna na bhoolein.
-
-## Tech Stack
-
-- **Frontend:** React 19, TypeScript, Vite, Tailwind CSS, Framer Motion,
-  Three.js / @react-three/fiber / @react-three/drei
-- **Backend:** Node.js, Express, Nodemailer (optional email relay)
+Tech Stack
+Layer	Technologies
+Frontend	React 19, TypeScript, Vite, Tailwind CSS, Framer Motion
+Backend	Node.js, Express, Nodemailer (optional)
+Deployment Checklist
+□ Push code to GitHub
+□ Deploy backend to Render/Railway
+□ Deploy frontend to Vercel/Netlify
+□ Set VITE_API_URL on frontend host to backend URL
+□ Set SMTP environment variables on backend host (if needed)
+□ Test contact form
