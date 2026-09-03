@@ -1,14 +1,51 @@
-export interface Skill {
-  name: string;
-  pct: number;
-  gradient: string;
+export interface SkillGroup {
+  label: string;
+  color: string;
+  items: string[];
 }
 
-export const skills: Skill[] = [
-  { name: "Data Structures & Algorithms", pct: 88, gradient: "linear-gradient(90deg,#1a6cf5,#00d4ff)" },
-  { name: "Competitive Programming", pct: 82, gradient: "linear-gradient(90deg,#7c3aed,#f72585)" },
-  { name: "Web Dev (React / Node)", pct: 80, gradient: "linear-gradient(90deg,#1a6cf5,#7c3aed)" },
-  { name: "AI & Search Algorithms", pct: 78, gradient: "linear-gradient(90deg,#7c3aed,#00d4ff)" },
-  { name: "SQL / Oracle PL-SQL / DBMS", pct: 76, gradient: "linear-gradient(90deg,#059669,#34d399)" },
-  { name: "OS / Concurrency (C, Bash)", pct: 72, gradient: "linear-gradient(90deg,#f72585,#fb923c)" },
+export const skillGroups: SkillGroup[] = [
+  {
+    label: "Languages",
+    color: "#00d4ff",
+    items: ["C++", "C", "Python", "JavaScript", "Java", "HTML5", "CSS3", "Bash", "Assembly"],
+  },
+  {
+    label: "Web & Backend",
+    color: "#60a5fa",
+    items: ["Node.js", "Express", "React", "REST APIs", "Postman", "Responsive Design"],
+  },
+  {
+    label: "Database & Systems",
+    color: "#4ade80",
+    items: ["Oracle 12c", "PL/SQL", "PostgreSQL", "MySQL", "SQL", "MS Visio (ER Diagrams)"],
+  },
+  {
+    label: "AI & Algorithms",
+    color: "#a78bfa",
+    items: [
+      "BFS / DFS",
+      "A* Search",
+      "Minimax",
+      "Propositional Logic",
+      "CSP · Backtracking",
+      "Dijkstra's",
+      "Utility Agents",
+    ],
+  },
+  {
+    label: "OS · Hardware · Tools",
+    color: "#f472b6",
+    items: [
+      "Ubuntu · Linux",
+      "POSIX Threads",
+      "Semaphores",
+      "Bash Scripting",
+      "Arduino",
+      "Ultrasonic Sensor",
+      "Git · GitHub",
+      "VS Code",
+      "MATLAB",
+    ],
+  },
 ];

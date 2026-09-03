@@ -1,13 +1,5 @@
 import { motion } from "framer-motion";
 
-const stats = [
-  { num: "19+", label: "Projects Built" },
-
-  { num: "4", label: "Semesters Done" },
-  { num: "Onsite Intern", label: "Hadi Textile" },
-  { num: "ICPC", label: "Regionalist" },
-];
-
 const taglineParts = [
   "CS Student @ FAST-NUCES",
   "ICPC Regionalist",
@@ -15,7 +7,6 @@ const taglineParts = [
   "Java Developer",
   "Competitive Programmer",
   "AI/ML Enthusiast",
-  "Problem Solver",
 ];
 
 export default function Hero() {
@@ -27,7 +18,7 @@ export default function Hero() {
         style={{ animationDelay: "-3s" }}
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[820px] text-center">
+      <div className="relative z-10 mx-auto w-full max-w-[900px] text-center">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -68,7 +59,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.7 }}
-          className="mb-14 flex flex-wrap justify-center gap-4"
+          className="flex flex-wrap justify-center gap-4"
         >
           <a
             href="#projects"
@@ -83,23 +74,6 @@ export default function Hero() {
             Let's Talk →
           </a>
         </motion.div>
-
-        <div className="mx-auto grid max-w-[560px] grid-cols-2 gap-3 sm:grid-cols-4">
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2 + i * 0.1, duration: 0.5 }}
-              className="rounded-xl border border-cyan/15 bg-card/80 px-4 py-4 backdrop-blur-xl transition-all hover:-translate-y-1 hover:border-cyan hover:shadow-[0_8px_30px_rgba(0,212,255,0.12)]"
-            >
-              <div className="font-mono text-[1.4rem] font-semibold leading-none text-cyan">
-                {s.num}
-              </div>
-              <div className="mt-1.5 text-[0.65rem] tracking-[0.08em] text-muted">{s.label}</div>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   );
