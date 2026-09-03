@@ -23,7 +23,7 @@ export default function About() {
             </div>
             <p>
               I'm <strong className="text-white">Zobia Razzaq</strong>, a{" "}
-              <strong className="text-white">2nd-year Computer Science student</strong> at
+              <strong className="text-white">3rd-year Computer Science student</strong> at
               FAST-NUCES Chiniot-Faisalabad, currently four semesters into my BS — covering
               everything from Digital Logic Design and Computer Organization &amp; Assembly, to
               Data Structures, Theory of Automata, Database Systems, Operating Systems, and
